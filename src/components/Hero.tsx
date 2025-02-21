@@ -9,9 +9,14 @@ const Hero = () => {
           <div className="inline-block glass px-4 py-2 rounded-full">
             <span className="text-emerald-500">AI Integration Partner</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto">
-            Enabridge: เชื่อม AI เข้ากับธุรกิจของคุณ
-          </h1>
+          <div className="space-y-4">
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              Enabridge
+            </h1>
+            <p className="text-2xl md:text-4xl text-emerald-500 font-medium">
+              เชื่อม AI เข้ากับธุรกิจของคุณ
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <button className="glass px-8 py-4 rounded-lg text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 flex items-center gap-2">
               จองปรึกษาฟรี

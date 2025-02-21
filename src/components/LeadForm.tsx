@@ -18,23 +18,29 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
+    <div id="contact" className="glass rounded-2xl p-8 max-w-2xl mx-auto">
       <h3 className="text-2xl font-bold mb-6 text-center">ติดต่อเรา</h3>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium mb-2">ชื่อ</label>
+            <label className="block text-sm font-medium mb-2">
+              ชื่อ <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
+              required
               className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 outline-none transition-colors"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium mb-2">บริษัท</label>
+            <label className="block text-sm font-medium mb-2">
+              บริษัท <span className="text-red-500">*</span>
+            </label>
             <input
               type="text"
+              required
               className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 outline-none transition-colors"
               value={formData.company}
               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -43,9 +49,12 @@ const LeadForm = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium mb-2">อีเมล</label>
+            <label className="block text-sm font-medium mb-2">
+              อีเมล <span className="text-red-500">*</span>
+            </label>
             <input
               type="email"
+              required
               className="w-full px-4 py-2 rounded-lg bg-white/5 border border-white/10 focus:border-emerald-500 outline-none transition-colors"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}

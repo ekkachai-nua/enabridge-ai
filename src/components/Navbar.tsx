@@ -16,11 +16,11 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
-              <a href="#services" className="text-gray-300 hover:text-emerald-500 transition-colors">
-                บริการของเรา
-              </a>
               <a href="#about" className="text-gray-300 hover:text-emerald-500 transition-colors">
                 เกี่ยวกับเรา
+              </a>
+              <a href="#services" className="text-gray-300 hover:text-emerald-500 transition-colors">
+                บริการของเรา
               </a>
               <a href="#contact" className="text-gray-300 hover:text-emerald-500 transition-colors">
                 ติดต่อ
@@ -44,16 +44,16 @@ const Navbar = () => {
         <div className="md:hidden glass">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a
-              href="#services"
-              className="block px-3 py-2 text-gray-300 hover:text-emerald-500 transition-colors"
-            >
-              บริการของเรา
-            </a>
-            <a
               href="#about"
               className="block px-3 py-2 text-gray-300 hover:text-emerald-500 transition-colors"
             >
               เกี่ยวกับเรา
+            </a>
+            <a
+              href="#services"
+              className="block px-3 py-2 text-gray-300 hover:text-emerald-500 transition-colors"
+            >
+              บริการของเรา
             </a>
             <a
               href="#contact"

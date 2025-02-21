@@ -45,8 +45,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-gray-400">
                 <Mail className="w-4 h-4" />
-                <a href="#contact" className="hover:text-emerald-500 transition-colors">
-                  ติดต่อเรา
+                <a href="mailto:ekkachai.n@enabridge.co" className="hover:text-emerald-500 transition-colors">
+                  ekkachai.n@enabridge.co
                 </a>
               </li>
             </ul>
@@ -69,6 +69,14 @@ const Footer = () => {
                 className="text-gray-400 hover:text-emerald-500 transition-colors"
               >
                 <Youtube className="w-6 h-6" />
+              </a>
+              <a
+                href="https://line.me/R/ti/p/@454npsem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-emerald-500 transition-colors"
+              >
+                <img src="/line-icon.svg" alt="Line" className="w-6 h-6" />
               </a>
             </div>
           </div>
