@@ -3,26 +3,26 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const FloatingPaths = () => {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
+  const paths = Array.from({ length: 48 }, (_, i) => ({
     id: i,
-    d: `M${380 - i * 5} -${189 + i * 6}C${380 - i * 5} -${
-      189 + i * 6
-    } ${312 - i * 5} ${216 - i * 6} -${152 - i * 5} ${343 - i * 6}C-${616 - i * 5} ${
-      470 - i * 6
-    } -${684 - i * 5} ${875 - i * 6} -${684 - i * 5} ${875 - i * 6}`,
-    width: 0.5 + i * 0.03,
+    d: `M${480 - i * 8} -${289 + i * 8}C${480 - i * 8} -${
+      289 + i * 8
+    } ${412 - i * 8} ${316 - i * 8} -${252 - i * 8} ${443 - i * 8}C-${816 - i * 8} ${
+      570 - i * 8
+    } -${884 - i * 8} ${975 - i * 8} -${884 - i * 8} ${975 - i * 8}`,
+    width: 0.5 + i * 0.02,
   }));
 
   return (
-    <div className="absolute inset-x-0 inset-y-0 w-3/4 mx-auto pointer-events-none">
-      <svg className="w-full h-full text-white/50" viewBox="0 0 696 316" fill="none">
+    <div className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden">
+      <svg className="w-full h-full text-white/50" viewBox="-200 -200 1200 800" fill="none">
         {paths.map((path) => (
           <motion.path
             key={path.id}
             d={path.d}
             stroke="currentColor"
             strokeWidth={path.width}
-            strokeOpacity={0.1 + path.id * 0.03}
+            strokeOpacity={0.1 + path.id * 0.02}
             initial={{ pathLength: 0.3, opacity: 0.6 }}
             animate={{
               pathLength: 1,
