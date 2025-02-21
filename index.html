@@ -9,6 +9,25 @@
     <meta name="author" content="Lovable" />
     <meta property="og:image" content="/og-image.png" />
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+      .n8n-chat {
+        --chat-primary-color: #10b981 !important;
+        --chat-bubble-color: #059669 !important;
+      }
+      .n8n-chat .message {
+        font-size: 0.875rem !important;
+      }
+      .n8n-chat .title {
+        font-size: 1.25rem !important;
+        background: linear-gradient(to right, #34d399, #059669);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+      }
+      .n8n-chat .subtitle {
+        font-size: 0.875rem !important;
+      }
+    </style>
   </head>
 
   <body>
@@ -34,7 +53,7 @@
             subtitle: "พร้อมจัดการนัดหมายให้ 24/7 คับ",
             footer: '',
             getStarted: 'เริ่มคุยเลย',
-            inputPlaceholder: 'Type your question..',
+            inputPlaceholder: 'พิมพ์ข้อความ..',
           },
         },
       });
