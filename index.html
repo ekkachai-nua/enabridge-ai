@@ -27,6 +27,13 @@
       .n8n-chat .subtitle {
         font-size: 0.875rem !important;
       }
+      /* Add specific styling for the chat icon */
+      .n8n-chat-button {
+        background: #10b981 !important;
+      }
+      .n8n-chat-button svg {
+        fill: white !important;
+      }
     </style>
   </head>
 
@@ -39,7 +46,7 @@
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
       createChat({
-        webhookUrl: 'https://localhost/webhook/7d769c8d-a4a9-4cd8-9df2-754d0ada4fb0/chat',
+        webhookUrl: 'https://n8n.enabridge.co/webhook/7d769c8d-a4a9-4cd8-9df2-754d0ada4fb0/chat',
         mode: 'window',
         showWelcomeScreen: false,
         defaultLanguage: 'en',
