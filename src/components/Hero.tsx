@@ -10,13 +10,8 @@ const Hero = () => {
             <span className="text-emerald-500">AI Integration Partner</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto">
-            เราเชื่อสุดใจว่า AI ไม่ใช่เครื่องมือที่ถูกจำกัด ไว้เฉพาะบริษัทยักษ์ใหญ่!
+            Enabridge: เชื่อม AI เข้ากับธุรกิจของคุณ
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto">
-            Enabridge ถือกำเนิดขึ้นเพื่อ ปลดล็อกพลัง แห่งอนาคต ให้ธุรกิจทุกขนาด
-            ก้าวข้ามขีดจำกัด สร้างแรงบันดาลใจ และผลลัพธ์ที่ยิ่งใหญ่
-            เราพร้อมเป็น เพื่อนร่วมทาง ที่จะพาคุณทะยานไปพร้อมกัน
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <button className="glass px-8 py-4 rounded-lg text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 flex items-center gap-2">
               จองปรึกษาฟรี
