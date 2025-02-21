@@ -1,8 +1,10 @@
 
 import { useState } from "react";
 import { Send } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const LeadForm = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -10,11 +12,48 @@ const LeadForm = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(
+        "https://hook.us1.make.com/hgz01p0nu1nh3ml8mom5xv5wmbiemova",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        toast({
+          title: "ส่งข้อความสำเร็จ",
+          description: "เราจะติดต่อกลับโดยเร็วที่สุด",
+        });
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to submit form");
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "เกิดข้อผิดพลาด",
+        description: "กรุณาลองใหม่อีกครั้ง",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -80,9 +119,10 @@ const LeadForm = () => {
         </div>
         <button
           type="submit"
-          className="w-full glass px-8 py-4 rounded-lg text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 flex items-center justify-center gap-2"
+          disabled={isSubmitting}
+          className="w-full glass px-8 py-4 rounded-lg text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:hover:scale-100"
         >
-          ส่งข้อความ
+          {isSubmitting ? "กำลังส่ง..." : "ส่งข้อความ"}
           <Send className="w-5 h-5" />
         </button>
       </form>

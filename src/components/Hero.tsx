@@ -1,5 +1,4 @@
 
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const FloatingPaths = () => {
@@ -57,12 +56,6 @@ const Hero = () => {
             <p className="text-2xl md:text-4xl text-emerald-500 font-medium">
               เชื่อม AI เข้ากับธุรกิจของคุณ
             </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-            <button className="glass px-8 py-4 rounded-lg text-emerald-500 hover:text-emerald-400 transition-all hover:scale-105 flex items-center gap-2">
-              จองปรึกษาฟรี
-              <ArrowRight className="w-5 h-5" />
-            </button>
           </div>
         </div>
       </div>
