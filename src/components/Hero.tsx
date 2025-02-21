@@ -8,7 +8,7 @@ const Hero = () => {
         backgroundColor="#000000"
         baseHue={142}
         rangeY={800}
-        particleCount={800}
+        particleCount={240}
         baseSpeed={0.1}
         rangeSpeed={2.0}
         baseRadius={1.5}
