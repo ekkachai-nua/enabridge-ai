@@ -30,7 +30,7 @@ export default defineConfig(({ mode }) => ({
   // Add build optimizations for production
   build: {
     outDir: "dist",
-    minify: "terser",
+    minify: "esbuild", // Using esbuild instead of terser
     sourcemap: false,
   }
 }));
