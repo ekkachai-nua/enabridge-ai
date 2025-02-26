@@ -79,13 +79,21 @@ const Hero = () => {
               AI Integration Solutions
             </p>
             
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
-              Bringing top-tier AI to your business – fast, affordable, and impactful
-            </p>
-            
-            <p className="text-lg md:text-xl text-emerald-400 font-medium mt-6">
-              เชื่อม AI เข้ากับธุรกิจของคุณ
-            </p>
+            <div className="mt-8 mb-10 max-w-3xl mx-auto bg-white/5 backdrop-blur-sm rounded-lg py-6 px-4 md:px-8 border border-emerald-500/20">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed">
+                Bringing top-tier AI to your business –
+                <span className="block sm:inline"> </span>
+                <span className="text-emerald-400 font-medium">fast</span>,
+                <span className="text-emerald-400 font-medium"> affordable</span>, and
+                <span className="text-emerald-400 font-medium"> impactful</span>
+              </p>
+              
+              <div className="mt-4 sm:mt-6 pt-4 border-t border-emerald-500/20">
+                <p className="text-md sm:text-lg md:text-xl text-emerald-400 font-medium tracking-wide">
+                  เชื่อม AI เข้ากับธุรกิจของคุณ
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
