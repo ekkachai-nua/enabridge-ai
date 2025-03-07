@@ -1,9 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const CompanyProfile = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -247,8 +244,6 @@ const CompanyProfile = () => {
 
   return (
     <div className="bg-background min-h-screen flex flex-col">
-      <Navbar />
-      
       <div className="flex-grow relative">
         {/* Close Button */}
         <button 
@@ -303,10 +298,9 @@ const CompanyProfile = () => {
           ))}
         </div>
       </div>
-      
-      <Footer />
     </div>
   );
 };
 
 export default CompanyProfile;
+
