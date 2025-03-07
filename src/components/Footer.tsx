@@ -1,102 +1,104 @@
 
-import React from "react";
-import CompanyProfileDialog from "./CompanyProfileDialog";
+import { Facebook, Youtube, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 py-12">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0">
-            <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-2">
+    <footer className="bg-card pt-16 pb-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-4">
               Enabridge
-            </h2>
-            <p className="text-gray-400">Bringing AI to your business</p>
+            </h3>
+            <p className="text-gray-400">
+              เชื่อมต่อธุรกิจของคุณกับพลังของ AI เพื่อการเติบโตที่ไม่มีขีดจำกัด
+            </p>
           </div>
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
-            <a href="#services" className="text-gray-300 hover:text-emerald-500 transition-colors">
-              บริการของเรา
-            </a>
-            <a href="#contact" className="text-gray-300 hover:text-emerald-500 transition-colors">
-              ติดต่อ
-            </a>
-            <CompanyProfileDialog>
-              <a className="text-gray-300 hover:text-emerald-500 transition-colors cursor-pointer">
-                Company Profile
+          <div>
+            <h4 className="font-semibold mb-4">ลิงก์ที่เป็นประโยชน์</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors">
+                  นโยบายความเป็นส่วนตัว
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors">
+                  เงื่อนไขการใช้งาน
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-gray-400 hover:text-emerald-500 transition-colors">
+                  ติดต่อเรา
+                </a>
+              </li>
+              <li>
+                <a href="/company-profile" className="text-gray-400 hover:text-emerald-500 transition-colors">
+                  Company Profile
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">ติดต่อ</h4>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-gray-400">
+                <Phone className="w-4 h-4" />
+                <a href="tel:0656688686" className="hover:text-emerald-500 transition-colors">
+                  065-668-8686
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-gray-400">
+                <Mail className="w-4 h-4" />
+                <a href="mailto:ekkachai.n@enabridge.co" className="hover:text-emerald-500 transition-colors">
+                  ekkachai.n@enabridge.co
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">โซเชียลมีเดีย</h4>
+            <div className="flex space-x-4">
+              <a
+                href="https://www.facebook.com/profile.php?id=61563096624780"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-emerald-500 transition-colors"
+              >
+                <Facebook className="w-6 h-6" />
               </a>
-            </CompanyProfileDialog>
+              <a
+                href="https://www.youtube.com/channel/UC2xbIQqhPKUR4TYSw1ZuzcQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-emerald-500 transition-colors"
+              >
+                <Youtube className="w-6 h-6" />
+              </a>
+              <a
+                href="https://line.me/R/ti/p/@454npsem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-emerald-500 transition-colors"
+              >
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg"  
+                  viewBox="0 0 48 48" 
+                  width="24" 
+                  height="24" 
+                  className="fill-current"
+                >
+                  <path d="M12.5,42h23c3.59,0,6.5-2.91,6.5-6.5v-23C42,8.91,39.09,6,35.5,6h-23C8.91,6,6,8.91,6,12.5v23C6,39.09,8.91,42,12.5,42z"/>
+                  <path fill="#fff" d="M37.113,22.417c0-5.865-5.88-10.637-13.107-10.637s-13.108,4.772-13.108,10.637c0,5.258,4.663,9.662,10.962,10.495c0.427,0.092,1.008,0.282,1.155,0.646c0.132,0.331,0.086,0.85,0.042,1.185c0,0-0.153,0.925-0.187,1.122c-0.057,0.331-0.263,1.296,1.135,0.707c1.399-0.589,7.548-4.445,10.298-7.611h-0.001C36.203,26.879,37.113,24.764,37.113,22.417z M18.875,25.907h-2.604c-0.379,0-0.687-0.308-0.687-0.688V20.01c0-0.379,0.308-0.687,0.687-0.687c0.379,0,0.687,0.308,0.687,0.687v4.521h1.917c0.379,0,0.687,0.308,0.687,0.687C19.562,25.598,19.254,25.907,18.875,25.907z M21.568,25.219c0,0.379-0.308,0.688-0.687,0.688s-0.687-0.308-0.687-0.688V20.01c0-0.379,0.308-0.687,0.687-0.687s0.687,0.308,0.687,0.687V25.219z M27.838,25.219c0,0.297-0.188,0.559-0.47,0.652c-0.071,0.024-0.145,0.036-0.218,0.036c-0.215,0-0.42-0.103-0.549-0.275l-2.669-3.635v3.222c0,0.379-0.308,0.688-0.688,0.688c-0.379,0-0.688-0.308-0.688-0.688V20.01c0-0.296,0.189-0.558,0.47-0.652c0.071-0.024,0.144-0.035,0.218-0.035c0.214,0,0.42,0.103,0.549,0.275l2.67,3.635V20.01c0-0.379,0.309-0.687,0.688-0.687c0.379,0,0.687,0.308,0.687,0.687V25.219z M32.052,21.927c0.379,0,0.688,0.308,0.688,0.688c0,0.379-0.308,0.687-0.688,0.687h-1.917v1.23h1.917c0.379,0,0.688,0.308,0.688,0.687c0,0.379-0.309,0.688-0.688,0.688h-2.604c-0.378,0-0.687-0.308-0.687-0.688v-2.603c0-0.001,0-0.001,0-0.001c0,0,0-0.001,0-0.001v-2.601c0-0.001,0-0.001,0-0.002c0-0.379,0.308-0.687,0.687-0.687h2.604c0.379,0,0.688,0.308,0.688,0.687s-0.308,0.687-0.688,0.687h-1.917v1.23H32.052z"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
-        <div className="border-t border-gray-800 my-8"></div>
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} Enabridge. All rights reserved.
+        <div className="border-t border-gray-800 pt-8">
+          <p className="text-center text-gray-400 text-sm">
+            © {new Date().getFullYear()} Enabridge. สงวนลิขสิทธิ์
           </p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
-            <a
-              href="#"
-              className="text-gray-400 hover:text-emerald-500 transition-colors"
-              aria-label="Twitter"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-emerald-500 transition-colors"
-              aria-label="GitHub"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                <path d="M9 18c-4.51 2-5-2-7-2"></path>
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-emerald-500 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect width="4" height="12" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </footer>

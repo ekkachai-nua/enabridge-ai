@@ -1,14 +1,29 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { useNavigate } from 'react-router-dom';
 
-const CompanyProfileDialog = ({ children }: { children: React.ReactNode }) => {
+const CompanyProfile = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
+
+  // Clean up slide nodes on component mount
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'Escape') {
+        navigate('/');
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [currentSlide, navigate]);
 
   const slides = [
     // Slide 1: Title & Introduction
@@ -229,68 +244,61 @@ const CompanyProfileDialog = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
-        {children}
-      </DialogTrigger>
-      <DialogContent className="fixed inset-0 bg-background w-full max-w-full h-full p-0 m-0 border-none shadow-none"> 
-        <div className="fixed inset-0 bg-background flex flex-col justify-center items-center overflow-hidden">
-          {/* Close Button */}
-          <button 
-            onClick={() => document.querySelector<HTMLButtonElement>('[aria-label="Close"]')?.click()}
-            className="absolute top-5 right-5 z-50 p-2 rounded-full bg-gray-800 hover:bg-emerald-600 transition-colors"
-          >
-            <X className="text-white" size={20} />
-          </button>
+    <div className="fixed inset-0 bg-background flex flex-col justify-center items-center overflow-hidden">
+      {/* Close Button */}
+      <button 
+        onClick={() => navigate('/')} 
+        className="absolute top-5 right-5 z-50 p-2 rounded-full bg-gray-800 hover:bg-emerald-600 transition-colors"
+      >
+        <X className="text-white" />
+      </button>
 
-          {/* Slide Container */}
-          <div className="slide-container h-full w-full overflow-hidden relative">
-            <div className="slide active h-full w-full flex flex-col justify-center">
-              <div className="max-w-6xl mx-auto w-full px-6 md:px-10">
-                {slides[currentSlide]}
-              </div>
-            </div>
-          </div>
-
-          {/* Navigation Controls */}
-          <div className="fixed bottom-6 right-6 z-50 flex gap-4">
-            <button 
-              onClick={prevSlide} 
-              className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
-              disabled={currentSlide === 0}
-            >
-              &#8592;
-            </button>
-            <button 
-              onClick={nextSlide} 
-              className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
-              disabled={currentSlide === totalSlides - 1}
-            >
-              &#8594;
-            </button>
-          </div>
-
-          {/* Slide Number */}
-          <div className="fixed bottom-6 left-6 z-50 text-gray-400">
-            {currentSlide + 1} / {totalSlides}
-          </div>
-
-          {/* Dots Navigation */}
-          <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentSlide ? "bg-emerald-500 transform scale-110" : "bg-gray-400"
-                }`}
-              />
-            ))}
+      {/* Slide Container */}
+      <div className="slide-container h-full w-full overflow-hidden relative">
+        <div className="slide active h-full w-full flex flex-col justify-center">
+          <div className="max-w-6xl mx-auto w-full px-6 md:px-10">
+            {slides[currentSlide]}
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </div>
+
+      {/* Navigation Controls */}
+      <div className="fixed bottom-6 right-6 z-50 flex gap-4">
+        <button 
+          onClick={prevSlide} 
+          className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
+          disabled={currentSlide === 0}
+        >
+          &#8592;
+        </button>
+        <button 
+          onClick={nextSlide} 
+          className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
+          disabled={currentSlide === totalSlides - 1}
+        >
+          &#8594;
+        </button>
+      </div>
+
+      {/* Slide Number */}
+      <div className="fixed bottom-6 left-6 z-50 text-gray-400">
+        {currentSlide + 1} / {totalSlides}
+      </div>
+
+      {/* Dots Navigation */}
+      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all ${
+              index === currentSlide ? "bg-emerald-500 transform scale-110" : "bg-gray-400"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default CompanyProfileDialog;
+export default CompanyProfile;
