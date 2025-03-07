@@ -32,6 +32,11 @@ const Footer = () => {
                   ติดต่อเรา
                 </a>
               </li>
+              <li>
+                <a href="/company-profile" className="text-gray-400 hover:text-emerald-500 transition-colors">
+                  Company Profile
+                </a>
+              </li>
             </ul>
           </div>
           <div>
