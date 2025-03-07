@@ -57,20 +57,7 @@ const CompanyProfile = () => {
       <p className="text-lg md:text-xl">We specialize in integrating existing AI solutions into client systems, helping businesses like yours harness the power of artificial intelligence without the complexity.</p>
     </div>,
 
-    // Slide 2: Meeting Agenda
-    <div className="slide-content" key="slide2">
-      <div className="slide-header">
-        <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Meeting Agenda</h1>
-      </div>
-      <ul className="space-y-4">
-        <li className="text-lg md:text-xl"><span className="text-emerald-500 font-bold">Who We Are</span> – Brief company background and founder's story</li>
-        <li className="text-lg md:text-xl"><span className="text-emerald-500 font-bold">Our Vision</span> – What drives us and the gap we see in the market</li>
-        <li className="text-lg md:text-xl"><span className="text-emerald-500 font-bold">How We Help</span> – Services and approach to AI integration</li>
-        <li className="text-lg md:text-xl"><span className="text-emerald-500 font-bold">Next Steps</span> – Discussion on client needs and potential collaboration</li>
-      </ul>
-    </div>,
-
-    // Slide 3: Company Background
+    // Slide 2: Company Background
     <div className="slide-content" key="slide3">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Company Background</h1>
@@ -93,7 +80,7 @@ const CompanyProfile = () => {
       </div>
     </div>,
 
-    // Slide 4: Founder Spotlight
+    // Slide 3: Founder Spotlight
     <div className="slide-content" key="slide4">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Founder Spotlight</h1>
@@ -115,7 +102,7 @@ const CompanyProfile = () => {
       </ul>
     </div>,
 
-    // Slide 5: Our Vision & Mission
+    // Slide 4: Our Vision & Mission
     <div className="slide-content" key="slide5">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Our Vision & Mission</h1>
@@ -134,7 +121,7 @@ const CompanyProfile = () => {
       </div>
     </div>,
 
-    // Slide 6: Why AI Integration?
+    // Slide 5: Why AI Integration?
     <div className="slide-content" key="slide6">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Why AI Integration?</h1>
@@ -159,7 +146,7 @@ const CompanyProfile = () => {
       </div>
     </div>,
 
-    // Slide 7: Our Approach & Services
+    // Slide 6: Our Approach & Services
     <div className="slide-content" key="slide7">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Our Approach & Services</h1>
@@ -189,7 +176,7 @@ const CompanyProfile = () => {
       </div>
     </div>,
 
-    // Slide 8: Value Proposition
+    // Slide 7: Value Proposition
     <div className="slide-content" key="slide8">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Value Proposition</h1>
@@ -210,7 +197,7 @@ const CompanyProfile = () => {
       </div>
     </div>,
 
-    // Slide 9: The Process & Next Steps
+    // Slide 8: The Process & Next Steps
     <div className="slide-content" key="slide9">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">The Process & Next Steps</h1>
@@ -224,27 +211,10 @@ const CompanyProfile = () => {
       </ol>
     </div>,
 
-    // Slide 10: Gathering Your Needs
-    <div className="slide-content" key="slide10">
-      <div className="slide-header">
-        <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Gathering Your Needs</h1>
-      </div>
-      <div className="bg-gray-800 rounded-lg p-5 mb-4 shadow-md">
-        <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">We'd like to understand your business better</h3>
-        <ul className="list-disc pl-6 space-y-2">
-          <li className="text-lg md:text-xl">What are your top pain points?</li>
-          <li className="text-lg md:text-xl">How do you envision AI fitting into your processes?</li>
-          <li className="text-lg md:text-xl">Are there any specific AI tools or technologies you're interested in?</li>
-          <li className="text-lg md:text-xl">Timeline and budget expectations?</li>
-        </ul>
-        <p className="text-lg md:text-xl mt-4">Let's discuss how we can tailor our solutions to address your specific challenges.</p>
-      </div>
-    </div>,
-
-    // Slide 11: Contact & Q&A
+    // Slide 9: Contact (modified to remove Thank You and Q&A sections)
     <div className="slide-content" key="slide11">
       <div className="slide-header">
-        <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Contact & Q&A</h1>
+        <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Contact</h1>
       </div>
       <div className="bg-gray-800 rounded-lg p-5 mb-6 shadow-md">
         <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Contact Information</h3>
@@ -252,10 +222,6 @@ const CompanyProfile = () => {
         <p className="text-lg md:text-xl">Phone: 065-668 8686</p>
         <p className="text-lg md:text-xl">Website: enabridge.co</p>
       </div>
-      <h2 className="text-2xl md:text-3xl text-emerald-500 mb-4">Thank You!</h2>
-      <p className="text-lg md:text-xl mb-6">We look forward to discussing how we can help your business harness the power of AI.</p>
-      <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Q&A Session</h3>
-      <p className="text-lg md:text-xl">Please feel free to ask any questions you may have.</p>
     </div>,
   ];
 
