@@ -1,10 +1,16 @@
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const toggleLanguage = () => {
+    setLanguage(language === "th" ? "en" : "th");
+  };
 
   return (
     <nav className="fixed w-full z-50 glass">
@@ -18,14 +24,21 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
               <Link to="/about" className="text-gray-300 hover:text-emerald-500 transition-colors">
-                เกี่ยวกับเรา
+                {t("about")}
               </Link>
               <a href="#services" className="text-gray-300 hover:text-emerald-500 transition-colors">
-                บริการของเรา
+                {t("services")}
               </a>
               <a href="#contact" className="text-gray-300 hover:text-emerald-500 transition-colors">
-                ติดต่อ
+                {t("contact")}
               </a>
+              <button 
+                onClick={toggleLanguage}
+                className="flex items-center gap-1 text-gray-300 hover:text-emerald-500 transition-colors"
+              >
+                <Globe size={18} />
+                <span>{language === "th" ? "EN" : "TH"}</span>
+              </button>
             </div>
           </div>
           <div className="md:hidden">
@@ -46,22 +59,29 @@ const Navbar = () => {
               className="block px-3 py-2 text-gray-300 hover:text-emerald-500 transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              เกี่ยวกับเรา
+              {t("about")}
             </Link>
             <a
               href="#services"
               className="block px-3 py-2 text-gray-300 hover:text-emerald-500 transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              บริการของเรา
+              {t("services")}
             </a>
             <a
               href="#contact"
               className="block px-3 py-2 text-gray-300 hover:text-emerald-500 transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              ติดต่อ
+              {t("contact")}
             </a>
+            <button
+              onClick={toggleLanguage}
+              className="flex items-center gap-1 px-3 py-2 text-gray-300 hover:text-emerald-500 transition-colors"
+            >
+              <Globe size={18} />
+              <span>{language === "th" ? "EN" : "TH"}</span>
+            </button>
           </div>
         </div>
       )}
