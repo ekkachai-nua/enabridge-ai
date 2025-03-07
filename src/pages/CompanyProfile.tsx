@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const CompanyProfile = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -244,59 +246,65 @@ const CompanyProfile = () => {
   };
 
   return (
-    <div className="fixed inset-0 bg-background flex flex-col justify-center items-center overflow-hidden">
-      {/* Close Button */}
-      <button 
-        onClick={() => navigate('/')} 
-        className="absolute top-5 right-5 z-50 p-2 rounded-full bg-gray-800 hover:bg-emerald-600 transition-colors"
-      >
-        <X className="text-white" />
-      </button>
+    <div className="bg-background min-h-screen flex flex-col">
+      <Navbar />
+      
+      <div className="flex-grow relative">
+        {/* Close Button */}
+        <button 
+          onClick={() => navigate('/')} 
+          className="absolute top-5 right-5 z-50 p-2 rounded-full bg-gray-800 hover:bg-emerald-600 transition-colors"
+        >
+          <X className="text-white" />
+        </button>
 
-      {/* Slide Container */}
-      <div className="slide-container h-full w-full overflow-hidden relative">
-        <div className="slide active h-full w-full flex flex-col justify-center">
-          <div className="max-w-6xl mx-auto w-full px-6 md:px-10">
-            {slides[currentSlide]}
+        {/* Slide Container */}
+        <div className="slide-container h-full w-full overflow-hidden relative">
+          <div className="slide active h-full w-full flex flex-col justify-center">
+            <div className="max-w-6xl mx-auto w-full px-6 md:px-10">
+              {slides[currentSlide]}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Navigation Controls */}
-      <div className="fixed bottom-6 right-6 z-50 flex gap-4">
-        <button 
-          onClick={prevSlide} 
-          className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
-          disabled={currentSlide === 0}
-        >
-          &#8592;
-        </button>
-        <button 
-          onClick={nextSlide} 
-          className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
-          disabled={currentSlide === totalSlides - 1}
-        >
-          &#8594;
-        </button>
-      </div>
+        {/* Navigation Controls */}
+        <div className="fixed bottom-6 right-6 z-50 flex gap-4">
+          <button 
+            onClick={prevSlide} 
+            className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
+            disabled={currentSlide === 0}
+          >
+            &#8592;
+          </button>
+          <button 
+            onClick={nextSlide} 
+            className="control-btn w-12 h-12 flex items-center justify-center bg-gray-800 text-white border-2 border-emerald-500 rounded-full hover:bg-emerald-500 hover:text-gray-900 transition-colors"
+            disabled={currentSlide === totalSlides - 1}
+          >
+            &#8594;
+          </button>
+        </div>
 
-      {/* Slide Number */}
-      <div className="fixed bottom-6 left-6 z-50 text-gray-400">
-        {currentSlide + 1} / {totalSlides}
-      </div>
+        {/* Slide Number */}
+        <div className="fixed bottom-6 left-6 z-50 text-gray-400">
+          {currentSlide + 1} / {totalSlides}
+        </div>
 
-      {/* Dots Navigation */}
-      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide ? "bg-emerald-500 transform scale-110" : "bg-gray-400"
-            }`}
-          />
-        ))}
+        {/* Dots Navigation */}
+        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentSlide ? "bg-emerald-500 transform scale-110" : "bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
