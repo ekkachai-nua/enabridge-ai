@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -243,8 +244,8 @@ const CompanyProfile = () => {
   };
 
   return (
-    <div className="bg-background min-h-screen flex flex-col">
-      <div className="flex-grow relative">
+    <div className="bg-background min-h-screen flex flex-col items-center justify-center">
+      <div className="flex-grow relative w-full max-w-6xl flex items-center justify-center">
         {/* Close Button */}
         <button 
           onClick={() => navigate('/')} 
@@ -254,8 +255,8 @@ const CompanyProfile = () => {
         </button>
 
         {/* Slide Container */}
-        <div className="slide-container h-full w-full overflow-hidden relative">
-          <div className="slide active h-full w-full flex flex-col justify-center">
+        <div className="slide-container h-full w-full overflow-hidden relative flex items-center justify-center">
+          <div className="slide active h-full w-full flex flex-col justify-center items-center">
             <div className="max-w-6xl mx-auto w-full px-6 md:px-10">
               {slides[currentSlide]}
             </div>
@@ -303,4 +304,3 @@ const CompanyProfile = () => {
 };
 
 export default CompanyProfile;
-
