@@ -1,4 +1,3 @@
-
 import { Facebook, Youtube, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
@@ -44,14 +43,14 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-gray-400">
                 <Phone className="w-4 h-4" />
-                <a href="tel:0656688686" className="hover:text-emerald-500 transition-colors">
-                  065-668-8686
+                <a href="tel:0800088686" className="hover:text-emerald-500 transition-colors">
+                  080-008-8686
                 </a>
               </li>
               <li className="flex items-center gap-2 text-gray-400">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:ekkachai.n@enabridge.co" className="hover:text-emerald-500 transition-colors">
-                  ekkachai.n@enabridge.co
+                <a href="mailto:ekkachai.n@enabridge.ai" className="hover:text-emerald-500 transition-colors">
+                  ekkachai.n@enabridge.ai
                 </a>
               </li>
             </ul>

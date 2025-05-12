@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -211,15 +210,15 @@ const CompanyProfile = () => {
       </ol>
     </div>,
 
-    // Slide 9: Contact (modified to remove Thank You and Q&A sections)
+    // Slide 9: Contact (modified to update email and phone number)
     <div className="slide-content" key="slide11">
       <div className="slide-header">
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Contact</h1>
       </div>
       <div className="bg-gray-800 rounded-lg p-5 mb-6 shadow-md">
         <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Contact Information</h3>
-        <p className="text-lg md:text-xl">Email: ekkachai.n@enabridge.co</p>
-        <p className="text-lg md:text-xl">Phone: 065-668 8686</p>
+        <p className="text-lg md:text-xl">Email: ekkachai.n@enabridge.ai</p>
+        <p className="text-lg md:text-xl">Phone: 080-008-8686</p>
         <p className="text-lg md:text-xl">Website: enabridge.co</p>
       </div>
     </div>,
