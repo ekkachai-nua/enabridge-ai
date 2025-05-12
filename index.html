@@ -89,29 +89,60 @@
     <script type="module" src="/src/main.tsx"></script>
     <script type="module">
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-      // Check if the current page is not the company profile page
-      if (!window.location.pathname.includes('/company-profile')) {
-        createChat({
-          webhookUrl: 'https://n.enabridge.ai/webhook/7d769c8d-a4a9-4cd8-9df2-754d0ada4fb0/chat',
-          mode: 'window',
-          showWelcomeScreen: false,
-          defaultLanguage: 'en',
-          initialMessages: [
-            'สวัสดีครับ ยินดีต้อนรับสู่ Enabridge! 👋',
-            'ผมพร้อมช่วยจัดการนัดหมายปรึกษาให้คุณครับ สะดวกวันไหนบอกได้เลยนะครับ'
-          ],
-          i18n: {
-            en: {
-              title: 'จองนัดหมายปรึกษา Enabridge',
-              subtitle: "พร้อมให้บริการ 24/7 ครับ",
-              footer: '',
-              getStarted: 'เริ่มจองนัดหมาย',
-              inputPlaceholder: 'พิมพ์ข้อความ..',
-            },
-          },
-        });
+      
+      let chatInstance = null;
+      
+      function initializeChat() {
+        if (window.location.pathname.includes('/company-profile')) {
+          // If on company profile page, remove chat if it exists
+          if (chatInstance) {
+            chatInstance.remove();
+            chatInstance = null;
+          }
+        } else {
+          // If not on company profile and chat doesn't exist, create it
+          if (!chatInstance) {
+            chatInstance = createChat({
+              webhookUrl: 'https://n.enabridge.ai/webhook/7d769c8d-a4a9-4cd8-9df2-754d0ada4fb0/chat',
+              mode: 'window',
+              showWelcomeScreen: false,
+              defaultLanguage: 'en',
+              initialMessages: [
+                'สวัสดีครับ ยินดีต้อนรับสู่ Enabridge! 👋',
+                'ผมพร้อมช่วยจัดการนัดหมายปรึกษาให้คุณครับ สะดวกวันไหนบอกได้เลยนะครับ'
+              ],
+              i18n: {
+                en: {
+                  title: 'จองนัดหมายปรึกษา Enabridge',
+                  subtitle: "พร้อมให้บริการ 24/7 ครับ",
+                  footer: '',
+                  getStarted: 'เริ่มจองนัดหมาย',
+                  inputPlaceholder: 'พิมพ์ข้อความ..',
+                },
+              },
+            });
+          }
+        }
       }
+
+      // Initialize chat when the page loads
+      initializeChat();
+
+      // Listen for route changes in the browser history
+      window.addEventListener('popstate', initializeChat);
+      
+      // For navigation within the React app
+      const originalPushState = history.pushState;
+      history.pushState = function() {
+        originalPushState.apply(this, arguments);
+        initializeChat();
+      };
+      
+      const originalReplaceState = history.replaceState;
+      history.replaceState = function() {
+        originalReplaceState.apply(this, arguments);
+        initializeChat();
+      };
     </script>
   </body>
 </html>
