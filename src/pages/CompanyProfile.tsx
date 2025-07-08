@@ -62,19 +62,20 @@ const CompanyProfile = () => {
         <h1 className="text-3xl md:text-5xl bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent mb-6">Company Background</h1>
       </div>
       <div className="bg-gray-800 rounded-lg p-5 mb-4 shadow-md">
-        <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Our Origins</h3>
-        <p className="text-lg md:text-xl">Newly established but split from existing company with the same founder</p>
+        <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">The AI Revolution</h3>
+        <p className="text-lg md:text-xl">AI technology is transforming industries at an unprecedented pace, creating new opportunities for businesses to innovate and compete</p>
       </div>
       <div className="bg-gray-800 rounded-lg p-5 mb-4 shadow-md">
-        <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Parent Company Focus</h3>
-        <p className="text-lg md:text-xl">Original company focuses on IT Outsourcing and Software house services</p>
-        <p className="text-lg md:text-xl">Strong background in banking, crypto (exchange and on-chain), and large-scale software systems</p>
+        <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Supporting AI Adoption</h3>
+        <p className="text-lg md:text-xl">Many businesses recognize AI's potential but lack the expertise and resources to implement it effectively</p>
+        <p className="text-lg md:text-xl">There's a growing need for specialized companies that can bridge this gap and democratize AI access</p>
       </div>
       <div className="bg-gray-800 rounded-lg p-5 mb-4 shadow-md">
-        <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Why a Dedicated AI Company?</h3>
+        <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Why Now?</h3>
         <ul className="list-disc pl-6 space-y-2">
-          <li className="text-lg md:text-xl">Different vision requiring specialized focus</li>
-          <li className="text-lg md:text-xl">Laser focus on AI adoption/integration rather than general software solutions</li>
+          <li className="text-lg md:text-xl">AI tools have matured to enterprise-grade reliability</li>
+          <li className="text-lg md:text-xl">Cost-effective integration solutions are becoming essential for competitive advantage</li>
+          <li className="text-lg md:text-xl">Businesses need rapid deployment without extensive R&D investments</li>
         </ul>
       </div>
     </div>,
@@ -219,7 +220,7 @@ const CompanyProfile = () => {
         <h3 className="text-xl md:text-2xl text-emerald-400 mb-3">Contact Information</h3>
         <p className="text-lg md:text-xl">Email: ekkachai.n@enabridge.ai</p>
         <p className="text-lg md:text-xl">Phone: 080-008-8686</p>
-        <p className="text-lg md:text-xl">Website: enabridge.co</p>
+        <p className="text-lg md:text-xl">Website: enabridge.ai</p>
       </div>
     </div>,
   ];
