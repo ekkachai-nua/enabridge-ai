@@ -17,12 +17,12 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">ลิงก์ที่เป็นประโยชน์</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors">
+                <a href="/privacy" className="text-gray-400 hover:text-emerald-500 transition-colors">
                   นโยบายความเป็นส่วนตัว
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-emerald-500 transition-colors">
+                <a href="/terms" className="text-gray-400 hover:text-emerald-500 transition-colors">
                   เงื่อนไขการใช้งาน
                 </a>
               </li>
